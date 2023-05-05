@@ -1,4 +1,4 @@
-import Fighter from './Fighter';
+import Fighter, { SimpleFighter } from './Fighter';
 import getRandomInt from './utils';
 import Energy from './Energy';
 import Archetype, { Mage } from './Archetypes';
@@ -79,7 +79,7 @@ export default class Character implements Fighter {
     return this._lifePoints;
   }
 
-  public attack(enemy: Fighter): void {
+  public attack(enemy: Fighter | SimpleFighter): void {
     enemy.receiveDamage(this._strength);
   }
 
@@ -95,7 +95,7 @@ export default class Character implements Fighter {
     this._lifePoints = this._maxLifePoints;
   }
 
-  public special(enemy: Fighter): void {
+  public special(enemy: Fighter | SimpleFighter): void {
     if (this._energy.amount >= 7) {
       this._energy.amount -= 7;
       enemy.receiveDamage(this._strength * 7);
