@@ -1,4 +1,4 @@
-# Recipes App
+# Trybers and Dragons
 Projeto da [Trybe](https://www.betrybe.com/).
 
 ## 💻 Projeto
